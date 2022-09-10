@@ -1,0 +1,145 @@
+main {
+  display: flex;
+  overflow-y: scroll;
+  justify-content: center;
+  width: 88%;
+  border-radius: 50px 0% 0% 50px;
+  background-color: white;
+}
+
+.content-container {
+  width: 76%;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 5rem;
+  padding: 6% 0 4% 0;
+}
+
+.available-internships {
+  font-size: 1.75rem;
+  font-weight: 500;
+  padding-bottom: 30px;
+}
+
+.firma-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 94%;
+  margin-bottom: 80px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.firma {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: calc(100% - 100px);
+  outline: 1px solid;
+}
+
+h2.title-for-job-description {
+  font-size: 1.5rem;
+  width: 96%;
+  padding: 20px 0px 20px;
+}
+
+.job-description {
+  width: 96%;
+  padding-bottom: 30px;
+}
+
+.bottom-section {
+  width: 96%;
+}
+
+.bottom-section > *:last-child {
+  margin-bottom: 20px;
+}
+
+.hashtags {
+  width: 100%;
+  padding-bottom: 8px;
+}
+
+.hashtag {
+  margin-right: 2px;
+  padding: 0 8px;
+  border: 1px solid #583C5A;
+  border-radius: 99px;
+  background-color: #583C5A42;
+}
+
+.company-and-people-applied {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.edit-button,
+.delete-button {
+  opacity: 0;
+  color: inherit;
+  border: none;
+  background-size: 50px 50px;
+  border: 2px solid #583C5A;
+  padding: 8px 20px;
+  display: inline-block;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: background-color, outline-offset 300ms;
+  outline: 2px solid #583C5A;
+  outline-offset: -2px;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+  border: 2px solid #583C5A;
+  background-color: #583c5a55;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  outline-offset: -6px;
+}
+
+.edit-button {
+  margin-bottom: 30px;
+}
+
+.delete-button {
+  background-color: rgba(138, 0, 64, 0.294);
+}
+
+.delete-button:hover {
+  background-color: rgba(138, 0, 64, 0.382);
+}
+
+.firma-container:hover .edit-button,
+.firma-container:hover .delete-button {
+  opacity: 1;
+}
+
+.edit-button:focus,
+.delete-button:focus {
+  opacity: 1;
+  outline: 5px #583C5A solid;
+}
+
+
