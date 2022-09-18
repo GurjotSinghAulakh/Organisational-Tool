@@ -1,17 +1,12 @@
-<?php include 'inc/header.php'; ?>
-
 <?php
-  $sql = 'SELECT * FROM internships';
-  $result = mysqli_query($conn, $sql);
-  $interships = mysqli_fetch_all($result, MYSQLI_ASSOC);
-?>
+  $title = 'view_internships_student';
+  require_once 'inc/header.php';
+  require_once 'db/conn.php';
+  require_once 'inc/header.php';
 
-<?php
-  $sql = 'SELECT name FROM tags';
-  $result = mysqli_query($conn, $sql);
-  $tags = mysqli_fetch_all($result, MYSQLI_ASSOC);
+  $internships = $crud->getAllInternships();
+  $tags = $crud->getAllPossibleTags();
 ?>
-
 
   <main>
     <section class="content-container">
@@ -21,24 +16,25 @@
         <div class="hashtag-options">
           <?php foreach($tags as $tag): ?>
             <label for="<?php echo $tag['name'] ?>" class="hashtag-option">
-              <input type="checkbox" name="<?php echo $tag['name'] ?>" id="<?php echo $tag['name'] ?>">
+              <input type="checkbox" checked name="<?php echo $tag['name'] ?>" id="<?php echo $tag['name'] ?>">
               <?php echo $tag['name'] ?>
             </label>
           <?php endforeach; ?>
         </div>
         <button id="search-for-internships">Search for internships</button>
       </form>
-      <p class="available-internships">37 interships available:</p>
+      <p class="available-internships">37 internships available:</p>
       <section>
-      <?php foreach($interships as $internship): ?>
+        <?php foreach($internships as $internship): ?>
+        <!-- <input type="hidden" name="post_id" value="?php echo $internship['id'] ?>"> -->
         <article class="firma-container">
           <div class="firma">
             <h2 class="title-for-job-description">
-              <?php echo $internship['job_title'] ?>
+              <?php echo $internship['post_title'] ?>
             </h2>
             <p class="job-description">
-              <?php echo $internship['job_description'] ?>
-              <?php if($internship['job_description'] == '') echo
+              <?php echo $internship['post_description'] ?>
+              <?php if($internship['post_description'] == '') echo
                 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam mollitia id nostrum alias voluptatem impedit natus perspiciatis, tenetur asperiores quas voluptas eos ipsam voluptatibus similique iure commodi ratione obcaecati inventore culpa modi provident sequi necessitatibus? Atque, nihil rerum. Voluptatem velit a odit ipsa error maiores distinctio perspiciatis expedita ullam blanditiis hic architecto eligendi quas, debitis, dolor magni corrupti sed atque?'; 
               ?>
             </p>
@@ -67,7 +63,9 @@
               </div>
             </div>
           </div>
-          <button class="send-application" alt="Send application"></button>
+          <a href="success_send_application?id=<?php echo $internship['id'] ?>.php">
+            <button class="send-application" alt="Send application"></button>
+          </a>
         </article>
         <?php endforeach; ?>
       </section>

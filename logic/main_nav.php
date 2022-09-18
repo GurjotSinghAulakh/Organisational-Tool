@@ -2,25 +2,32 @@
   if ($current_user == 'admin') {
     echo '
     <ul>
-      <li ' . (($title == '') ? 'class="active"' : '') . '>
-        <a href="/">
+      <li ' . (($title == 'index_admin') ? 'class="active"' : '') . '>
+        <a href="' . (($title == 'index_admin') ? '' : 'index_admin.php') . '">
           <p class="nav-tag">
-            Available Interships
+            Published Interships
           </p>
         </a>
       </li>
-      <li ' . (($title == '') ? 'class="active"' : '') . '>
-        <a href="/">
+      <li ' . (($title == 'members') ? 'class="active"' : '') . '>
+        <a href="' . (($title == 'members') ? '' : 'members.php') . '">
           <p class="nav-tag">
-            View Status
+            Members
           </p>
         </a>
       </li>
     </ul>
     ';
-  } else if ($current_user == 'company') {
+  } else if ($current_user == 'organization') {
     echo '
     <ul>
+      <li ' . (($title == 'internships_company') ? 'class="active"' : '') . '>
+        <a href="' . (($title == 'internships_company') ? '' : 'internships_company.php') . '">
+          <p class="nav-tag">
+            Your Posts
+          </p>
+        </a>
+      </li>
       <li ' . (($title == 'create_internship') ? 'class="active"' : '') . '>
         <a href="' . (($title == 'create_internship') ? '' : 'create_internship.php') . '">
           <p class="nav-tag">
@@ -28,10 +35,10 @@
           </p>
         </a>
       </li>
-      <li ' . (($title == 'company_internships') ? 'class="active"' : '') . '>
-        <a href="' . (($title == 'company_internships') ? '' : 'company_internships.php') . '">
+      <li ' . (($title == 'members') ? 'class="active"' : '') . '>
+        <a href="' . (($title == 'members') ? '' : 'members.php') . '">
           <p class="nav-tag">
-            Your Posts
+            Members
           </p>
         </a>
       </li>
@@ -40,23 +47,30 @@
   } else if ($current_user == 'student') {
     echo '
     <ul>
-      <li ' . (($title == 'index') ? 'class="active"' : '') . '>
-        <a href="' . (($title == 'index') ? '' : 'index.php') . '">
+      <li ' . (($title == 'view_internships_student') ? 'class="active"' : '') . '>
+        <a href="' . (($title == 'view_internships_student') ? '' : 'view_internships_student.php') . '">
           <p class="nav-tag">
             Available Interships
           </p>
         </a>
       </li>
-      <li ' . (($title == 'student_status') ? 'class="active"' : '') . '>
-        <a href="' . (($title == 'student_status') ? '' : 'student_status.php') . '">
+      <li ' . (($title == 'status_student') ? 'class="active"' : '') . '>
+        <a href="' . (($title == 'status_student') ? '' : 'status_student.php') . '">
           <p class="nav-tag">
             View Status
+          </p>
+        </a>
+      </li>
+      <li ' . (($title == 'members') ? 'class="active"' : '') . '>
+        <a href="' . (($title == 'members') ? '' : 'members.php') . '">
+          <p class="nav-tag">
+            Members
           </p>
         </a>
       </li>
     </ul>
     ';
   } else {
-    echo $user;
+    echo 'Something went wrong';
   }
 ?>

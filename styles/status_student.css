@@ -1,0 +1,62 @@
+main {
+  display: flex;
+  overflow-y: scroll;
+  justify-content: center;
+  width: 88%;
+  border-radius: 50px 0% 0% 50px;
+  background-color: white;
+}
+
+.content-container {
+  width: 76%;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 5rem;
+  padding: 6% 0 4% 0;
+}
+
+.hashtag-options {
+  display: flex;
+  margin-top: 4px;
+}
+
+.hashtag-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 10px;
+  padding: 2px 8px;
+  user-select: none;
+  border-radius: 100px;
+}
+
+.hashtag-option:hover {
+  background-color: rgb(193, 193, 193);
+}
+
+.hashtag-option input {
+  margin-right: 4px;
+}
+
+/* #sort-skills {
+  font-weight: 500;
+  margin: 10px 0 50px;
+  padding: 10px;
+  border: 1px solid #583C5A;
+  cursor: pointer;
+} */
+
+.your-internships {
+  font-size: 1.75rem;
+  font-weight: 500;
+  padding-bottom: 30px;
+}
+
+.list-of-your-internships {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: #583C5A solid 1px;
+}
