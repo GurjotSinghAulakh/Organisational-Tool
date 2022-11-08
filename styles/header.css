@@ -60,7 +60,7 @@ nav.menu-container {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100%;
   height: 100vh;
   background-color: #583C5A;
@@ -103,7 +103,7 @@ nav.menu-container {
 
 /* gap: 20px; */
   width: 100%;
-  margin: 60% 0px;
+  margin: 20% 0px;
 }
 
 .menu-container li {
@@ -168,6 +168,7 @@ nav.menu-container {
   width: 90%;
   text-align: center;
   color: white;
+  z-index: 1;
 }
 
 .university-badge-container {
@@ -177,4 +178,147 @@ nav.menu-container {
 
 .university-badge {
   width: 100%;
+}
+
+/* /////////////////////////////////////////////////////////// */
+/* ///////////////         MODAL         ///////////////////// */
+/* /////////////////////////////////////////////////////////// */
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 1000px;
+  max-width: 80%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 20px 25px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+  z-index: 1;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* /////////////////////////////////////////////////////////// */
+/* /////////////////      member list      /////////////////// */
+/* /////////////////////////////////////////////////////////// */
+
+.list-of-members {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: #583C5A solid 1px;
+}
+
+.column {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.column:first-child {
+  background-color: #583C5A;
+}
+
+.column:first-child > .row {
+  color: white !important;
+}
+
+.column:nth-child(2n) {
+  background-color: #583c5a30;
+}
+
+.column:hover:not(:nth-child(1)) {
+  background-color: rgba(88, 60, 90, 0.382);
+}
+
+.row {
+  width: 100%;
+}
+
+.row::first-letter {
+  text-transform: capitalize;
+}
+
+.row > *::first-letter {
+  text-transform: capitalize;
+}
+
+.success-message-container {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  padding: 20px 40px;
+  border: .1rem solid #598b21;
+  background-color: #B9F4A9;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 500;
+  animation: fadeOutMessage 5s forwards;
+}
+
+.failed-message {
+  border: .1rem solid #c35048;
+  background-color: #f2ccc5;
+}
+
+@keyframes fadeOutMessage {
+  0% {}
+  50% {opacity: 1;}
+  100% {opacity: 0;display: none;}
 }

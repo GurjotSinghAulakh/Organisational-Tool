@@ -1,8 +1,8 @@
 <?php 
   $dbhost = '127.0.0.1';
   $db = 'practicle_it_project';
-  $dbuser = 'krosh';
-  $dbpass = 'krosh';
+  $dbuser = 'root';
+  $dbpass = '';
   $dbcharset = 'utf8mb4';
 
   $dsn = "mysql:host=$dbhost;dbname=$db;charset=$dbcharset";
@@ -15,9 +15,16 @@
     throw new PDOException($e->getMessage());
   }
 
-  require_once 'crud.php';
-  require_once 'user.php';
-  $crud = new crud($pdo);
-  $user = new user($pdo);
+  require_once 'create.php';
+  require_once 'read.php';
+  require_once 'update.php';
+  require_once 'delete.php';
+  $create = new create($pdo);
+  $read   = new read($pdo);
+  $update = new update($pdo);
+  $delete = new delete($pdo);
+  
+  require_once 'recreate_database.php';
+  $recreate_database = new recreate_database($pdo);
 
 ?>

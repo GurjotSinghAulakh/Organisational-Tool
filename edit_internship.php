@@ -3,14 +3,18 @@
   require_once 'db/conn.php';
   require_once 'inc/header.php';
     
-  // make it so u get results from database and use get id
-
-  if (isset($_POST['submit'])) {
-    $id = $_POST['id'];
-    $co_name = $_POST['co_name'];
-    $post_title = $_POST['post_title'];
-    $post_description = $_POST['post_description'];
-    $co_website = $_POST['co_website'];
+  if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $isSuccess = $read->get_internship($id);
+  } else {
+    header("Location: ../internships_company.php");
+  }
+  
+  if ($isSuccess) {
+    $co_name = $isSuccess[0]['co_name'];
+    $post_title = $isSuccess[0]['post_title'];
+    $post_description = $isSuccess[0]['post_description'];
+    $co_website = $isSuccess[0]['co_website'];
   } else {
 
   }
@@ -19,19 +23,19 @@
   <main>
     <section class="content-container">
       <h1>Edit Internship</h1>
-      <form method="post" action="success_edit.php">
+      <form method="post" action="success/success_edit_internship.php">
         <input type="hidden" name="id" value="<?php echo $id ?>">
-        <label>
+        <!-- <label>
           Company name
-          <input type="text" name="co_name" placeholder="Type in your company's name" value="<?php echo $co_name ?>">
-        </label>
+          <input type="text" name="co_name" placeholder="Type in your company's name" value="?php echo $co_name ?>">
+        </label> -->
         <label>
           Title of the post
           <input type="text" name="post_title" placeholder="Type in the title of this post" value="<?php echo $post_title ?>">
         </label>
         <label>
           Description for the post
-          <textarea name="post_description" placeholder="Fill in description for the internship" cols="30" rows="10" value="<?php echo $post_description ?>"></textarea>
+          <textarea name="post_description" placeholder="Fill in description for the internship" cols="30" rows="10"><?php echo $post_description ?></textarea>
         </label>
         <label>
           Link to the company's website
@@ -41,5 +45,8 @@
       </form>
     </section>
   </main>
+    
+  <?php include_once 'inc/feedback_message.php' ?>
+
 </body>
 </html>

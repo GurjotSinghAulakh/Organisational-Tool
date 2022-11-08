@@ -1,5 +1,6 @@
 <?php
-  if ($title == 'view_internships_student' || $title == 'index_admin') {
+  // if ($title == 'view_internships_student' || $title == 'index_admin' || $title == 'not_published_internships' || $title == 'view_profile') {
+  if ($title == 'view_internships_student' || $title == 'index_admin' || $title == 'not_published_internships') {
     echo '<link rel="stylesheet" href="styles/index.css">';
   }
   else if ($title == 'internships_company') {
@@ -16,6 +17,10 @@
   }
   else if ($title == 'status_student') {
     echo '<link rel="stylesheet" href="styles/index.css">';
+    echo '<link rel="stylesheet" href="styles/status_student.css">';
+  }
+  else if ($title == 'view_profile') {
+    echo '<link rel="stylesheet" href="styles/view_profile.css">';
   }
   
 ?>

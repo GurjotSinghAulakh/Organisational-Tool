@@ -3,9 +3,16 @@
     echo '
     <ul>
       <li ' . (($title == 'index_admin') ? 'class="active"' : '') . '>
-        <a href="' . (($title == 'index_admin') ? '' : 'index_admin.php') . '">
+        <a href="' . (($title == 'index_admin') ? '' : 'index2.php') . '">
           <p class="nav-tag">
             Published Interships
+          </p>
+        </a>
+      </li>
+      <li ' . (($title == 'not_published_internships') ? 'class="active"' : '') . '>
+        <a href="' . (($title == 'not_published_internships') ? '' : 'not_published_internships.php') . '">
+          <p class="nav-tag">
+            Unpublished Interships
           </p>
         </a>
       </li>
@@ -16,13 +23,20 @@
           </p>
         </a>
       </li>
+      <li ' . (($title == 'view_profile') ? 'class="active"' : '') . '>
+        <a href="view_profile.php">
+          <p class="nav-tag">
+            View Profile
+          </p>
+        </a>
+      </li>
     </ul>
     ';
   } else if ($current_user == 'organization') {
     echo '
     <ul>
       <li ' . (($title == 'internships_company') ? 'class="active"' : '') . '>
-        <a href="' . (($title == 'internships_company') ? '' : 'internships_company.php') . '">
+        <a href="' . (($title == 'internships_company') ? '' : 'index2.php') . '">
           <p class="nav-tag">
             Your Posts
           </p>
@@ -42,13 +56,20 @@
           </p>
         </a>
       </li>
+      <li ' . (($title == 'view_profile') ? 'class="active"' : '') . '>
+        <a href="view_profile.php">
+          <p class="nav-tag">
+            View Profile
+          </p>
+        </a>
+      </li>
     </ul>
     ';
   } else if ($current_user == 'student') {
     echo '
     <ul>
       <li ' . (($title == 'view_internships_student') ? 'class="active"' : '') . '>
-        <a href="' . (($title == 'view_internships_student') ? '' : 'view_internships_student.php') . '">
+        <a href="' . (($title == 'view_internships_student') ? '' : 'index2.php') . '">
           <p class="nav-tag">
             Available Interships
           </p>
@@ -65,6 +86,13 @@
         <a href="' . (($title == 'members') ? '' : 'members.php') . '">
           <p class="nav-tag">
             Members
+          </p>
+        </a>
+      </li>
+      <li ' . (($title == 'view_profile') ? 'class="active"' : '') . '>
+        <a href="view_profile.php">
+          <p class="nav-tag">
+            View Profile
           </p>
         </a>
       </li>

@@ -1,0 +1,143 @@
+/* * {
+  border: 1px solid;
+} */
+
+main {
+  display: flex;
+  overflow-y: scroll;
+  justify-content: center;
+  width: 88%;
+  border-radius: 50px 0% 0% 50px;
+  background-color: white;
+}
+
+main * {
+  font-size: 1.1rem;
+}
+
+.content-container {
+  width: 76%;
+  height: 100vh;
+}
+
+.top-about-me-section {
+  display: flex;
+  justify-content: start;
+  margin-top: 2%;
+  margin-bottom: 6%;
+}
+
+.image-container {
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  width: 30vh;
+  margin-right: 5%;
+}
+
+.image-container > img {
+  height: 100%;
+  object-fit: cover; 
+}
+
+.short-info-about-user {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 50%;
+}
+
+.short-info-about-user > a:not(:last-child) {
+  width: fit-content;
+}
+
+.short-info-about-user > a.edit-button {
+  margin-top: 3%;
+}
+
+.short-info-about-user > a:hover {
+  text-decoration: underline;
+}
+
+.short-about-me {
+  margin-bottom: 2%;
+}
+
+h1 {
+  font-size: 5rem;
+  /* padding: 6% 0 4% 0; */
+  line-height: 8rem;
+}
+
+h1::first-letter {
+  text-transform: capitalize;
+}
+
+.edit-button {
+  text-align: center;
+  padding: 10px 0px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  background-color: hsla(296, 20%, 29%, 0.3);
+  border: 2px solid hsl(296, 20%, 29%);
+  border-radius: 5px;
+}
+
+.edit-button:hover {
+  background-color: hsla(296, 20%, 29%, 0.4);
+}
+
+.about-me-section {
+  
+}
+
+.about-me-section h2 {
+  font-size: 2.75rem;
+  margin-bottom: 1%;
+  font-weight: 500;
+}
+
+.about-me-container {
+  
+}
+
+#modal {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+              rgba(0, 0, 0, 0.12) 0px -12px 30px,
+              rgba(0, 0, 0, 0.12) 0px 4px 6px,
+              rgba(0, 0, 0, 0.17) 0px 12px 13px,
+              rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 0px !important;
+}
+
+.modal-body > form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  font-weight: 500;
+}
+
+.modal-body > form > button {
+  padding: 10px 20px;
+  border: 1px solid rgb(134, 134, 134);
+  font-weight: 400;
+}
+
+.modal-body > form > button:hover {
+  background-color: #d1b5d3;
+}
+
+.modal-header .close-button {
+  background-color: rgb(232, 207, 207);
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 1px solid rgb(184, 104, 104);
+}
+
+.modal-header .close-button:hover {
+  background-color: rgb(212, 178, 178);
+}

@@ -65,7 +65,8 @@ h1 {
 .column {
   width: 100%;
   padding: 10px;
-  display: flex;
+  display: none;
+  position: relative;
   justify-content: space-evenly;
 }
 
@@ -77,14 +78,86 @@ h1 {
   color: white !important;
 }
 
-.column:nth-child(2n) {
+/* This shit doesnt work and there is no way to fix it with css */
+/* div.visible:nth-of-type(even) {
   background-color: #583c5a30;
-}
+} */
 
-.column:hover:not(:nth-child(1)) {
+.visible:hover:not(:nth-child(1)) {
   background-color: rgba(88, 60, 90, 0.382);
 }
 
 .row {
   width: 100%;
+}
+
+/* here is an error, the text is underlined but not the container
+it is also a too big of a content inside the container 
+
+this also destroyes the purpose of organization having to invite others, not everyone else
+should have an if if this is a company */
+
+.visible {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+              rgba(0, 0, 0, 0.12) 0px -12px 30px,
+              rgba(0, 0, 0, 0.12) 0px 4px 6px,
+              rgba(0, 0, 0, 0.17) 0px 12px 13px,
+              rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 0px !important;
+}
+
+.modal-body > form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  font-weight: 500;
+}
+
+.modal-body > form > button {
+  padding: 10px 20px;
+  border: 1px solid rgb(134, 134, 134);
+  font-weight: 400;
+}
+
+.modal-body > form > button:hover {
+  background-color: #d1b5d3;
+}
+
+.modal-header .close-button {
+  background-color: rgb(232, 207, 207);
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 1px solid rgb(184, 104, 104);
+}
+
+.modal-header .close-button:hover {
+  background-color: rgb(212, 178, 178);
+}
+
+.view-profile {
+  font-size: .8rem;
+  margin-left: 10px;
+  text-decoration: underline;
+}
+
+.invite-student {
+  border: 1px solid rgb(134, 134, 134);
+  font-weight: 700;
+  padding: 4px 10px;
+  cursor: pointer;
+  background-color: #dfdce0;
+  position: absolute;
+  right: .5rem;
+}
+
+.invite-student:hover {
+  background-color: #d5c4d9;
 }
